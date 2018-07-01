@@ -1,5 +1,8 @@
 package it.polito.tdp.porto.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Paper {
 
 	private int eprintid;
@@ -7,7 +10,9 @@ public class Paper {
 	private String issn;
 	private String publication;
 	private String type;
-	private String types;
+	private String types; 
+	
+	List<Author> list = new ArrayList<>(); //dove l'articolo è il corrente ed ho autori diversi
 
 	public Paper(int eprintid, String title, String issn, String publication, String type, String types) {
 		this.eprintid = eprintid;
@@ -64,6 +69,16 @@ public class Paper {
 
 	public void setTypes(String types) {
 		this.types = types;
+	}
+
+	
+	
+	public List<Author> getAutori() {
+		return list;
+	}
+
+	public void setList(List<Author> list) {
+		this.list = list;
 	}
 
 	@Override
